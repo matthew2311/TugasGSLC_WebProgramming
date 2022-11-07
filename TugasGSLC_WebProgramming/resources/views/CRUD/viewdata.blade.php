@@ -14,6 +14,7 @@
                                     <th scope="col">Nama Matkul</th>
                                     <th scope="col">Jam Matkul</th>
                                     <th scope="col">Ruang Matkul</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,6 +25,14 @@
                                         <td scope="col">{{ $data->nama_matkul }}</td>
                                         <td scope="col">{{ $data->jam_matkul }}</td>
                                         <td scope="col">{{ $data->ruang_matkul }}</td>
+                                        <td>
+                                            <form method="post" enctype="multipart/form-data"
+                                                action="{{ Route('delete', $data->id) }}">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn-danger btn">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

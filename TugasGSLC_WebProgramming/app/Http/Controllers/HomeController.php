@@ -43,4 +43,10 @@ class HomeController extends Controller
     public function CreateView() {
         return view('CRUD.create');
     }
+
+    public function Delete($id) {
+        $data = Data::find($id);
+        $data->delete();
+        return redirect(route('view'));
+    }
 }
