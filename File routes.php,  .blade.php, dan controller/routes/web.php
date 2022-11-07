@@ -17,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/create', [HomeController::class, 'CreateView'])->name('createview');
 Route::post('/create', [HomeController::class, 'Create'])->name('add');
+Route::delete('/delete/{id}', [HomeController::class, 'Delete'])->name('delete');
 
 Route::get('/view', [HomeController::class, 'view'])->name('view');
